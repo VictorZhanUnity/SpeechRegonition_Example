@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Manager.SpeechRecognition
+namespace Managers.SpeechRecognition
 {
     internal class SpeechRecognitionListener : AndroidJavaProxy
     {

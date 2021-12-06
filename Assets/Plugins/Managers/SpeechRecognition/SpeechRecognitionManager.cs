@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Android;
 
-namespace Manager.SpeechRecognition
+namespace Managers.SpeechRecognition
 {
     /// <summary>
     /// From Google Speech-to-Text API
+    /// 使用AddEventListener新增CallBack事件處理
+    /// 使用StartSpeech開始語音辨識
     /// </summary>
     public class SpeechRecognitionManager
     {

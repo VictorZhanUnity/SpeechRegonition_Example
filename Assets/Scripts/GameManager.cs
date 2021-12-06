@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Manager.SpeechRecognition;
+using Managers.SpeechRecognition;
 using AndroidScript;
 
 public class GameManager : MonoBehaviour
