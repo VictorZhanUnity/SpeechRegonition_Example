@@ -23,6 +23,15 @@ namespace Managers.SpeechRecognition
         }
         #endregion
 
+        /// <summary>
+        /// 是否已啟動錄音
+        /// </summary>
+        public bool IsActivated
+        {
+            get { return m_IsActivated; }
+        }
+        private bool m_IsActivated = false;
+
         internal AndroidJavaObject ajObject;
         internal SpeechRecognitionListener eventListner;
 
@@ -93,7 +102,11 @@ namespace Managers.SpeechRecognition
         /// <summary>
         /// 開始語音辨識
         /// </summary>
-        private void onBeginningOfSpeech() => OnBeginningOfSpeech?.Invoke();
+        private void onBeginningOfSpeech()
+        {
+            m_IsActivated = true;
+            OnBeginningOfSpeech?.Invoke();
+        }
         /// <summary>
         /// 接收rmsdB資料(音量大小)
         /// </summary>
@@ -101,7 +114,11 @@ namespace Managers.SpeechRecognition
         /// <summary>
         /// 結束語音辨識
         /// </summary>
-        private void onEndOfSpeech() => OnEndOfSpeech?.Invoke();
+        private void onEndOfSpeech()
+        {
+            m_IsActivated = false;
+            OnEndOfSpeech?.Invoke();
+        }
         /// <summary>
         /// 錯誤訊息(沒偵測到結果)
         /// </summary>
